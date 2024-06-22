@@ -2,8 +2,8 @@
 let numeroSecreto = 5;
 let numeroUsuario;
 let intentos = 1;
-let palabraVeces = 'vez';
-
+//let palabraVeces = 'vez';
+let maximosIntentos = 3;
 
 while (numeroUsuario != numeroSecreto) {
     numeroUsuario = prompt("Me indicas un numero entre 1 y 10 por favor: ");
@@ -12,7 +12,7 @@ while (numeroUsuario != numeroSecreto) {
 
     if (numeroUsuario == numeroSecreto) {
         //Acertamos, fue verdadera la condición 
-        alert(`Acertaste, el número es: ${numeroUsuario} lo hiciste en ${intentos} ${palabraVeces}`);
+        alert(`Acertaste, el número es: ${numeroUsuario} lo hiciste en ${intentos} ${intentos == 1 ? 'vez' : 'veces'}`);
         console.log('Resultado de la comparacion ', numeroUsuario == numeroSecreto);
     } else {
         //No acertamos
@@ -23,10 +23,10 @@ while (numeroUsuario != numeroSecreto) {
         }
 
         //Incrementamos el contador cuando no acierta
-        intentos = intentos + 1;
-       palabraVeces = 'veces';
+        intentos++;
+       //palabraVeces = 'veces';
        if (intentos > 3) {
-        alert('LLegaste al número maximo de intentos');
+        alert(`LLegaste al numero maximo de ${maximosIntentos} intentos`);
         break
        }
     }
